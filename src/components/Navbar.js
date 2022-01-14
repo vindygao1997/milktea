@@ -40,7 +40,6 @@ const Navbar = () => {
                 <NavSearchIconButton>
                     <AiOutlineSearch size={26}/>
                 </NavSearchIconButton>
-
             </NavSearchContainer>
            </Nav> 
         </>

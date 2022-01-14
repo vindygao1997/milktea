@@ -1,5 +1,4 @@
 import { FaBars } from 'react-icons/fa';
-import { AiOutlineSearch } from 'react-icons/ai';
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 
