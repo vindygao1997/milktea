@@ -1,0 +1,90 @@
+{
+    "milktea": [
+     
+       {
+          "name":"Pudding Wow Milk",
+          "price": "$5.35",
+          "picture": "./pictures/pudding_wow_milk.jpeg"
+       },
+     
+       {
+          "name":"Oreo Wow Milk",
+          "price": "$5.75",
+          "picture": "./pictures/oreo_wow_milk.jpeg"
+       },
+
+       {
+        "name":"Oolong Milk Tea",
+        "price": "$5.25",
+        "picture": "./pictures/oolong_milk_tea.jpeg"
+        },
+
+        {
+            "name":"Thai Milk Tea",
+            "price": "$5.25",
+            "picture": "./pictures/thai_milk_tea.jpeg"
+        },
+
+        {
+            "name":"Boba Milk Tea",
+            "price": "$5.85",
+            "picture": "./pictures/boba_milk_tea.jpeg"
+        },
+
+        {
+            "name":"Jasmine Green Milk Tea",
+            "price": "$5.05",
+            "picture": "./pictures/jasmine_green_milk_tea.jpeg"
+        },
+
+        {
+            "name":"Mango Milk Tea",
+            "price": "$5.25",
+            "picture": "./pictures/mango_milk_tea.jpeg"
+        },
+
+        {
+            "name":"Watermelon Milk Tea",
+            "price": "$5.20",
+            "picture": "./pictures/watermelon_milk_tea.jpeg"
+        },
+
+        {
+            "name":"Matcha Milk Tea",
+            "price": "$5.35",
+            "picture": "./pictures/matcha_milk_tea.jpeg"
+        },
+
+        {
+            "name":"Caramel Milk Tea",
+            "price": "$5.23",
+            "picture": "./pictures/caramel_milk_tea.jpeg"
+        }
+    ],
+    "fruittea": [
+     
+        {
+           "name":"Strawberry Green Tea",
+           "price": "$5.35",
+           "picture": "./pictures/strawberry_green_tea.jpeg"
+        },
+      
+        {
+           "name":"Peach Oolong Tea",
+           "price": "$5.75",
+           "picture": "./pictures/peach_oolong_tea.jpeg"
+        },
+ 
+        {
+         "name":"Grape Green Tea w/ Cheese Foam",
+         "price": "$6.25",
+         "picture": "./pictures/grape_green_tea.jpeg"
+         },
+ 
+         {
+             "name":"Mango Oolong Tea",
+             "price": "$5.25",
+             "picture": "./pictures/mango_oolong_tea.jpeg"
+         }
+    ]
+ }

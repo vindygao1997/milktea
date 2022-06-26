@@ -16,6 +16,9 @@ const Navbar = () => {
            <Bars />
 
             <NavMenu>
+                <NavLink to="/home">
+                    Home
+                </NavLink>
                 <NavLink to="/milktea">
                     Milk Tea
                 </NavLink>
