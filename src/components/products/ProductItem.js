@@ -25,10 +25,16 @@ function ProductItem(props) {
 
 
         <div class="card h-100">
-            <img src={productSrc} class="card-img-top" alt="..."/>
-            <div class="card-body">
-            <h5 class="card-title">{productName}</h5>
-            <p class="card-text">{productPrice}</p>
+             <div class="row justify-content-between">
+                <div class="col-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{productName}</h5>
+                        <p class="card-text">{productPrice}</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img src={productSrc} style={{maxWidth:'100%'}}alt="..."/>
+                </div>
             </div>
         </div>    
 
