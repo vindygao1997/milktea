@@ -9,44 +9,10 @@ import {
 } from "./NavbarElements";
 import { AiOutlineSearch } from 'react-icons/ai';
 import { NavLink as Link } from 'react-router-dom';
+import NavbarItem from './NavbarItem';
 
 const Navbar = () => {
     return (
-        // <>
-        //    <Nav>
-        //    <Bars />
-
-        //     <NavMenu>
-        //         <NavLink to="/home">
-        //             Home
-        //         </NavLink>
-        //         <NavLink to="/milktea">
-        //             Milk Tea
-        //         </NavLink>
-        //         <NavLink to="/fruittea">
-        //             Fruit Tea
-        //         </NavLink>
-        //         <NavLink to="/seasonal">
-        //             Seasonal
-        //         </NavLink>
-        //         <NavLink to="/freshtea">
-        //             Fresh Tea
-        //         </NavLink>
-        //         <NavLink to="/cafe">
-        //             Cafe
-        //         </NavLink>
-        //         <NavLink to="/special">
-        //             Special
-        //         </NavLink>
-        //     </NavMenu> 
-        //     <NavSearchContainer>
-        //         <NavSearchInput />
-        //         <NavSearchIconButton>
-        //             <AiOutlineSearch size={26}/>
-        //         </NavSearchIconButton>
-        //     </NavSearchContainer>
-        //    </Nav> 
-        // </>
         <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,24 +20,12 @@ const Navbar = () => {
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <NavLink to="/milktea"class="nav-link active" aria-current="page" href="#">Milktea</NavLink>
-                </li>
-                <li class="nav-item">
-                <NavLink to="/fruittea" class="nav-link active" aria-current="page" href="#">Fruittea</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Seasonal</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Fresh tea</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Coffee</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Special</a>
-                </li>
+                <NavbarItem endpoint="/milktea" name="Milktea"/>
+                <NavbarItem endpoint="/fruittea" name="Fruittea"/>
+                <NavbarItem endpoint="/seasonal" name="Seasonal"/>
+                <NavbarItem endpoint="/freshtea" name="Fresh Tea"/>
+                <NavbarItem endpoint="/coffee" name="Coffee"/>
+                <NavbarItem endpoint="/special" name="Special"/>
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
