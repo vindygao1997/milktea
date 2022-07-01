@@ -11,27 +11,26 @@ import Milktea from './pages/milktea';
 import Fruittea from './pages/fruittea';
 import Seasonal from './pages/seasonal';
 import Freshtea from './pages/freshtea';
-import Cafe from './pages/cafe';
+import Coffee from './pages/coffee';
 import Special from './pages/special';
+import SignIn from './pages/SignIn';
 
 function App() {
   return (
-    <>
-      <Navbar />
+    <div class="container">
       <Routes>
         <Route path='/home' exact element={<Home />}/>
         <Route path='/milktea' exact element={<Milktea />}/>
         <Route path='/fruittea' element={<Fruittea/>} />
         <Route path='/seasonal' element={<Seasonal/>} />
         <Route path='/freshtea' element={<Freshtea/>} />
-        <Route path='/cafe' element={<Cafe/>} />
+        <Route path='/coffee' element={<Coffee/>} />
         <Route path='/special' element={<Special/>} />
+        <Route path='/signin' element={<SignIn/>} />
       </Routes>
-      <Products />
-      <Footerbar />
       
       
-    </>
+    </div>
   );
 }
 

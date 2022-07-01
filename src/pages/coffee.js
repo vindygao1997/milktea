@@ -1,6 +1,6 @@
 import React from 'react';
   
-const Cafe = () => {
+const Coffee = () => {
   return (
     <div
       style={{
@@ -15,4 +15,4 @@ const Cafe = () => {
   );
 };
   
-export default Cafe;
+export default Coffee;
