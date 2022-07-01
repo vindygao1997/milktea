@@ -3,9 +3,10 @@ import LayoutDefault from './LayoutDefault';
   
 const Home = () => {
   return (
-    <LayoutDefault category='home'>
+    // <LayoutDefault category='home'>
 
-    </LayoutDefault>
+    // </LayoutDefault>
+    <div></div>
   );
 };
   
