@@ -16,10 +16,10 @@ import Special from './special';
 
 const LayoutDefault = (props) => {
     return (
-        
         <div class="container">
           <Navbar />
           <div class="container">
+            
             <Products category={props.category}/>
           </div>
           <Routes>

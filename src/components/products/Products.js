@@ -6,6 +6,8 @@ import ProductItem from './ProductItem.js'
 
 
 const Products = (props) => {
+  console.log(props.category)
+
 
   const [products, setProducts] = React.useState([])
 
@@ -13,8 +15,7 @@ const Products = (props) => {
     fetch("productlist.json")
     .then(Response => Response.json())
     .then(data => {
-        console.log(data.milktea)
-        setProducts(data.milktea);
+        setProducts(data.fruittea);
     });
   }
   
