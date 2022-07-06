@@ -1,7 +1,8 @@
 
 import React from "react";
-import './Products.css'
-import ProductItem from './ProductItem.js'
+import './Products.css';
+import ProductItem from './ProductItem.js';
+import axios from "axios";
 
 
 
@@ -12,11 +13,13 @@ const Products = (props) => {
   const [products, setProducts] = React.useState([])
 
   const getData = () => {
-    fetch("productlist.json")
-    .then(Response => Response.json())
-    .then(data => {
-        setProducts(data.fruittea);
-    });
+    //fetch("productlist.json")
+    axios.get("/milktea")
+    .then(response => console.log(response));
+    // .then(response => JSON.stringify(response))
+    // .then(data => {
+    //     setProducts(data);
+    // });
   }
   
   React.useEffect( () => getData(), [])
