@@ -1,14 +1,30 @@
-const Toppings = () => {
+import React from 'react';
+
+const Toppings = (props) => {
+    const toppingList = ["boba", "pudding", "salted cheese foam"];
+    const toppingNames = ["Boba", "Pudding", "Salted Cheese Foam"];
+
+    const [toppingStates, setToppingStates] = React.useState(
+        new Array(toppingList.length).fill(false)
+    );
+
+    const handleChange = (position) => {
+        const updatedToppings = toppingStates.map((item, index) => (
+            index === position? !item : item
+        ))
+        props.sendToParent(updatedToppings);
+        setToppingStates(updatedToppings);
+    }
+
     return (
-        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-            <input type="checkbox" class="btn-check" id="btncheck1" />
-            <label class="btn btn-outline-secondary" htmlFor="btncheck1">Boba</label>
+        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group" >
+            {toppingList.map((i, index) => (
+                <>
+                    <input type="checkbox" class="btn-check" id={i} value={i} onChange={() => handleChange(index)}/>
+                    <label class="btn btn-outline-secondary" htmlFor={i}>{toppingNames[index]}</label>
+                </>
 
-            <input type="checkbox" class="btn-check" id="btncheck2" />
-            <label class="btn btn-outline-secondary" htmlFor="btncheck2">Pudding</label>
-
-            <input type="checkbox" class="btn-check" id="btncheck3" />
-            <label class="btn btn-outline-secondary" htmlFor="btncheck3">Salted Cheese Foam</label>
+            ))}
         </div>
     );
 };

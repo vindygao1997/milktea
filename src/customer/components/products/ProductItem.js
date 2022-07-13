@@ -19,7 +19,7 @@ function ProductItem(props) {
                     <img src={productSrc} style={{maxWidth:'100%'}}alt="..."/>
                 </div>
                 <a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#orderingModal"></a>
-                <OrderingModal />
+                <OrderingModal productName={productName} />
             </div>
         </div>    
 

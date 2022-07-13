@@ -1,9 +1,11 @@
-function FunctionAddToChart() {
-    function clickHandler() {
-        console.log("success")
+import axios from "axios"
+
+function FunctionAddToChart({product, sugarLevel, tempLevel, toppings}) {
+    function addToChart() {
+        // pass info to shopping cart
     }
     return (
-        <button onClick={clickHandler}type="button" class="btn btn-outline-secondary">Add to Cart</button>
+        <button onClick={addToChart}type="button" class="btn btn-outline-secondary">Add to Cart</button>
     )
 }
 export default FunctionAddToChart

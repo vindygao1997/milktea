@@ -1,23 +1,27 @@
-const SugarLevel = () => {
+import React from 'react';
+
+const SugarLevel = (props) => {
+    const [sugarLevel, setSugarLevel] = React.useState(null);
+    const info = ["sugar0", "sugar30", "sugar50", "sugar70", "sugar100"];
+    const labels = ["No Sugar", "30% Sugar", "50% Sugar", "70% Sugar", "100% Sugar"];
+
+    
+    const onChangeValue = (e) => {
+        props.sendToParent(e.target.value);
+        setSugarLevel(e.target.value);
+    }
+
     return (
         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio1"  />
-            <label class="btn btn-outline-secondary" htmlFor="btnradio1">No Sugar</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" />
-            <label class="btn btn-outline-secondary" htmlFor="btnradio2">30% Sugar</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" />
-            <label class="btn btn-outline-secondary" htmlFor="btnradio3">50% Sugar</label>
-
-
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" />
-            <label class="btn btn-outline-secondary" htmlFor="btnradio3">70% Sugar</label>
-
-
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" />
-            <label class="btn btn-outline-secondary" htmlFor="btnradio3">100% Sugar</label>
-        </div>
+        {info.map((i, index) => (
+            <>
+            <input type="radio" class="btn-check" name="sugarLevel" id={i} value={i} checked={sugarLevel === i} onChange={onChangeValue}/>
+            <label class="btn btn-outline-secondary" htmlFor={i}>{labels[index]}</label>
+            </>
+        ))}
+        </div>  
+        
+        
     )
 
 }

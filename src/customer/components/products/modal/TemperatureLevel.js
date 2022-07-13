@@ -1,17 +1,28 @@
-const TemperatureLevel = () => {
+import React from 'react';
+
+const TemperatureLevel = (props) => {
+    const [tempLevel, setTempLevel] = React.useState(null);
+    const tempOptions = ["ice0", "ice50", "ice100"];
+    const tempNames = ["No Ice", "Half Ice", "Full Ice"];
+
+    const handleChange = (e) => {
+        props.sendToParent(e.target.value);
+        setTempLevel(e.target.value)
+    }
+
     return (
         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" />
-            <label class="btn btn-outline-secondary" htmlFor="btnradio1">No Ice</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" />
-            <label class="btn btn-outline-secondary" htmlFor="btnradio2">Half Ice</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" />
-            <label class="btn btn-outline-secondary" htmlFor="btnradio3">Full Ice</label>
+            {
+                tempOptions.map((option, index) => (
+                    <>
+                    <input type="radio" class="btn-check" name="temperatureLevel" id={option} value={option} checked={tempLevel === option} onChange={handleChange} />
+                    <label class="btn btn-outline-secondary" htmlFor={option}>{tempNames[index]}</label>
+                    </>
+                ))
+            }
         </div>
-    )
+    );
 
-}
+};
 
 export default TemperatureLevel
