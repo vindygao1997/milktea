@@ -1,3 +1,4 @@
+import OrderingModal from "./modal/OrderingModal";
 
 function ProductItem(props) {
     const productName = props.name
@@ -17,6 +18,8 @@ function ProductItem(props) {
                 <div class="col-4">
                     <img src={productSrc} style={{maxWidth:'100%'}}alt="..."/>
                 </div>
+                <a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#orderingModal"></a>
+                <OrderingModal />
             </div>
         </div>    
 

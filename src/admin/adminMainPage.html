@@ -1,0 +1,16 @@
+{% extends 'adminLayOut.html' %} 
+
+{% block content %}
+    {% for order in orders %}
+        <div class='order'>
+            <p>{{ order['id'] }}</p>
+            <p>{{ order['drink1'] }}</p>
+            <p>{{ order['sugar_level1'] }}</p>
+            <p>{{ order['temperature1'] }}</p>
+            <p>{{ order['topping1'] }}</p>
+            <p>{{ order['topping2'] }}</p>
+            <p>{{ order['topping3'] }}</p>
+            <p>{{ order['order_status'] }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

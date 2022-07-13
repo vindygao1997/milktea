@@ -1,23 +1,21 @@
 import './App.css';
 import React from 'react';
 import './App.css';
-import Navbar from './components/navbar/Navbar.js';
-import Footerbar from './components/footer/Footerbar.js';
-import Products from './components/products/Products.js';
+
 import { Route, Routes } from 'react-router-dom';
 
-import Home from './pages/home.js';
-import Milktea from './pages/milktea';
-import Fruittea from './pages/fruittea';
-import Seasonal from './pages/seasonal';
-import Freshtea from './pages/freshtea';
-import Coffee from './pages/coffee';
-import Special from './pages/special';
-import SignIn from './pages/SignIn';
+import Home from './customer/pages/home.js';
+import Milktea from './customer/pages/milktea';
+import Fruittea from './customer/pages/fruittea';
+import Seasonal from './customer/pages/seasonal';
+import Freshtea from './customer/pages/freshtea';
+import Coffee from './customer/pages/coffee';
+import Special from './customer/pages/special';
+import SignIn from './customer/pages/SignIn';
+import AdminPage from './admin/AdminPage';
 
 function App() {
   return (
-    <div class="container">
       <Routes>
         <Route path='/home' exact element={<Home />}/>
         <Route path='/milktea' exact element={<Milktea />}/>
@@ -27,10 +25,10 @@ function App() {
         <Route path='/coffee' element={<Coffee/>} />
         <Route path='/special' element={<Special/>} />
         <Route path='/signin' element={<SignIn/>} />
+        <Route path='/admin' element={<AdminPage/>} />
       </Routes>
       
-      
-    </div>
+    
   );
 }
 

@@ -7,19 +7,15 @@ import axios from "axios";
 
 
 const Products = (props) => {
-  console.log(props.category)
+  
 
 
   const [products, setProducts] = React.useState([])
 
   const getData = () => {
-    //fetch("productlist.json")
     axios.get("/milktea")
-    .then(response => console.log(response));
-    // .then(response => JSON.stringify(response))
-    // .then(data => {
-    //     setProducts(data);
-    // });
+    .then(response => response.data) // got an array of arrays containing each row of info in db
+    .then(r => setProducts(r))
   }
   
   React.useEffect( () => getData(), [])
@@ -29,11 +25,13 @@ const Products = (props) => {
   return (
       <div className="container">
           <div class="row row-cols-1 row-cols-md-2 g-4">
+            {console.log(products)}
             {products.map(product => (
+              
                <ProductItem 
-                            name={product.name} 
-                            price={product.price} 
-                            src={product.picture}/>
+                            name={product[2]} 
+                            price={product[3]} 
+                            src={product[4]}/>
             ))}
           </div>
       </div>
