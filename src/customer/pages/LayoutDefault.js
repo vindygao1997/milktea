@@ -15,22 +15,21 @@ import Coffee from './coffee';
 import Special from './special';
 
 const LayoutDefault = (props) => {
+    const category = props.category;
+    const numOfItemsInCart = props.numOfItemsInCart;
+    const [newAdded, setNewAdded] = React.useState([]);
+
+    React.useEffect( () => {
+      props.sendNewAdded(newAdded);
+    }, [newAdded])
+
     return (
         <div class="container">
-          <Navbar />
+          <Navbar numOfItemsInCart={numOfItemsInCart}/>
           <div class="container">
             
-            <Products category={props.category}/>
+            <Products category={category} sendNewAddedItem={setNewAdded}/>
           </div>
-          <Routes>
-            <Route path='/home' exact element={<Home/>} />
-            <Route path='/milktea' exact element={<Milktea/>} />
-            <Route path='/fruittea' exact element={<Fruittea/>} />
-            <Route path='/seasonal' exact element={<Seasonal/>} />
-            <Route path='/freshtea' exact element={<Freshtea/>} />
-            <Route path='/cafe' exact element={<Coffee/>} />
-            <Route path='/special' exact element={<Special/>} />
-          </Routes>
         <div class="container">
           <Footerbar />
         </div>

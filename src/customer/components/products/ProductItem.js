@@ -1,9 +1,16 @@
 import OrderingModal from "./modal/OrderingModal";
+import React from "react"
 
 function ProductItem(props) {
     const productName = props.name
     const productPrice = props.price
     const productSrc = props.src
+
+    const [customInfo, setCustomInfo] = React.useState([])
+
+    React.useEffect(() => {
+        props.sendToParent([productName, customInfo])
+    }, [customInfo])
 
     return (
 
@@ -19,7 +26,9 @@ function ProductItem(props) {
                     <img src={productSrc} style={{maxWidth:'100%'}}alt="..."/>
                 </div>
                 <a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#orderingModal"></a>
-                <OrderingModal productName={productName} />
+                <OrderingModal 
+                    productName={productName} 
+                    sendAddedItem={setCustomInfo}/>
             </div>
         </div>    
 

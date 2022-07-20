@@ -1,8 +1,8 @@
-import axios from "axios"
 
-function FunctionAddToChart({product, sugarLevel, tempLevel, toppings}) {
+
+function FunctionAddToChart(props) {
     function addToChart() {
-        // pass info to shopping cart
+        props.sendAdded(true)
     }
     return (
         <button onClick={addToChart}type="button" class="btn btn-outline-secondary">Add to Cart</button>

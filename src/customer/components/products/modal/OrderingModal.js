@@ -4,11 +4,19 @@ import Toppings from './Toppings';
 import FunctionAddToChart from './FunctionAddToChart';
 import React from 'react';
 
-const OrderingModal = ({productName}) => {
+const OrderingModal = (props) => {
+
+    const productName = props.productName;
 
     const [sugarLevel, setSugarLevel] = React.useState(null);
     const [temperatureLevel, setTemperatureLevel] = React.useState(null);
     const [toppings, setToppings] = React.useState([]);
+    const [addState, setAddState] = React.useState(false);
+
+    React.useEffect(() => {
+        props.sendAddState(addState);
+        props.sendAddedItem([sugarLevel, temperatureLevel, toppings]);
+    }, [addState])
 
     return (
         <div class="modal fade" id="orderingModal" tabIndex="-1" aria-labelledby="orderingModalLabel" aria-hidden="true">
@@ -28,7 +36,12 @@ const OrderingModal = ({productName}) => {
                 <Toppings toChild={toppings} sendToParent={setToppings}/>
             </div>
             <div class="modal-footer">
-                <FunctionAddToChart product={productName} sugarInfo={sugarLevel} tempInfo={temperatureLevel} toppingInfo={toppings}/>
+                <FunctionAddToChart 
+                        product={productName} 
+                        sugarInfo={sugarLevel} 
+                        tempInfo={temperatureLevel} 
+                        toppingInfo={toppings}
+                        sendAdded={setAddState}/>
                 
             </div>
             </div>
