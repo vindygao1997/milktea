@@ -6,11 +6,12 @@ function ProductItem(props) {
     const productPrice = props.price
     const productSrc = props.src
 
-    const [customInfo, setCustomInfo] = React.useState([])
+    // const [customInfo, setCustomInfo] = React.useState([])
 
-    React.useEffect(() => {
-        props.sendToParent([productName, customInfo])
-    }, [customInfo])
+    // React.useEffect(() => {
+    //     props.sendToParent([productName, customInfo])
+    // }, [customInfo])
+    
 
     return (
 
@@ -28,7 +29,7 @@ function ProductItem(props) {
                 <a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#orderingModal"></a>
                 <OrderingModal 
                     productName={productName} 
-                    sendAddedItem={setCustomInfo}/>
+                    />
             </div>
         </div>    
 

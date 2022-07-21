@@ -18,45 +18,18 @@ import ShoppingCart from './customer/components/shoppingCart/ShoppingCart';
 function App() {
   const [cart, setCart] = React.useState([]);
 
-  const localCart = localStorage.getItem('cart');
+  let localCart = localStorage.getItem('cart');
 
-  const addItem = (item) => {
-    const cartCopy = [...cart];
-    const {id} = item;
-    const existingItem = cartCopy.find(cartItem => cartItem.id === id);
-
-    
-    if (existingItem) {
-      // if item already exists
-      existingItem.quantity = item.quantity;
-    } else {
-      // if not exist, just add it
-      cartCopy.push(item)
-    }
-    setCart(cartCopy); // update cart state with modified copy
-
-    // store updated cart as string and update local Storage
-    const stringCart = JSON.stringify(cartCopy);
-    localStorage.setItem("cart", stringCart)
-
-  }
-  const updateItem = (itemId, amount) => {}
-  const removeItem = (itemId) => {}
-
+ 
   const adminPages = ["adminHome"];
   const categories = ["milktea", "fruittea", "seasonal", "freshtea", "coffee", "special"];
 
+  // rerender the whole app to update shopping cart number if new item added
   React.useEffect(() => {
-    localCart = JSON.parse(localCart);
-    if (localCart) setCart(localCart)
-  }, [])
+    if (localCart) setCart(JSON.parse(localCart));
+  }, [localCart])
 
-  const handleAdd = ({productName, customInfo}) => {
-    const sugarLevel = customInfo[0];
-    const tempLevel = customInfo[1];
-    const toppings = customInfo[2];
 
-  }
 
   return (
       <Routes>
@@ -70,9 +43,7 @@ function App() {
         {categories.map((categoryName) => (
           <Route path={`/${categoryName}`} 
                  exact element={
-                    <LayoutDefault category={categoryName} 
-                                   sendNewAdded={handleAdd} 
-                                   numOfItemInCart={cart.length}/>
+                    <LayoutDefault category={categoryName} />
                  }/>
         ))}
 
