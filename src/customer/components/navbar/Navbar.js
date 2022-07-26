@@ -1,19 +1,22 @@
 
 import NavbarItem from './NavbarItem';
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 const Navbar = () => {
     const [numOfItems, setNumOfItems] = React.useState(0);
 
+    // listen to the change of localStorage, once changed, update cart number
     React.useEffect( () => {
         const localCart = localStorage.getItem("cart");
         if (localCart) {
             setNumOfItems(JSON.parse(localCart).length);
         }
-    }, [])
+    }, [numOfItems])
+
+
 
     return (
+        
         <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

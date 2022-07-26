@@ -6,11 +6,6 @@ import { Route, Routes } from 'react-router-dom';
 
 import Home from './customer/pages/home.js';
 import LayoutDefault from './customer/pages/LayoutDefault';
-import Fruittea from './customer/pages/fruittea';
-import Seasonal from './customer/pages/seasonal';
-import Freshtea from './customer/pages/freshtea';
-import Coffee from './customer/pages/coffee';
-import Special from './customer/pages/special';
 import SignIn from './customer/pages/SignIn';
 import AdminPage from './admin/AdminPage';
 import ShoppingCart from './customer/components/shoppingCart/ShoppingCart';

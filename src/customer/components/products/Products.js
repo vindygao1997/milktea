@@ -13,13 +13,6 @@ const Products = (props) => {
   const [products, setProducts] = React.useState([])
 
 
-  // function getData() {
-  //   axios.get(`/${category}`)
-  //   .then(response => response.data) // got an array of arrays containing each row of info in db
-  //   .then(r => setProducts(r))
-   
-  // }
-
   React.useEffect(() => {
     axios.get(`/${category}`)
     .then(response => response.data) // got an array of arrays containing each row of info in db
@@ -31,7 +24,6 @@ const Products = (props) => {
   return (
       <div className="container">
           <div class="row row-cols-1 row-cols-md-2 g-4">
-            {/* {console.log(products)} */}
             {products.map(product => (
               
                <ProductItem 
