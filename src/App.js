@@ -11,18 +11,18 @@ import AdminPage from './admin/AdminPage';
 import ShoppingCart from './customer/components/shoppingCart/ShoppingCart';
 
 function App() {
-  const [cart, setCart] = React.useState([]);
+  // const [cart, setCart] = React.useState([]);
 
-  let localCart = localStorage.getItem('cart');
+  // let localCart = localStorage.getItem('cart');
 
  
   const adminPages = ["adminHome"];
   const categories = ["milktea", "fruittea", "seasonal", "freshtea", "coffee", "special"];
 
   // rerender the whole app to update shopping cart number if new item added
-  React.useEffect(() => {
-    if (localCart) setCart(JSON.parse(localCart));
-  }, [localCart])
+  // React.useEffect(() => {
+  //   if (localCart) setCart(JSON.parse(localCart));
+  // }, [localCart])
 
 
 

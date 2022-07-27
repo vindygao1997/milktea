@@ -1,7 +1,7 @@
 const OrderTable = (props) => {
     const orderInfo = props.orderInfo;
     return (
-    <table class="table">
+    <table className="table">
                     <thead>
                         <tr>
                             <th scope="col">Order-ID</th>
@@ -25,7 +25,7 @@ const OrderTable = (props) => {
                         <td>{order[4]}</td>
                         <td>{order[5]}</td>
                         <td>{order[6]}</td>
-                        <td>{order[7] == 1?"Completed":"To be finished"}</td>
+                        <td>{order[7] === 1?"Completed":"To be finished"}</td>
                         </tr>
                                 
                     ))}

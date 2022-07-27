@@ -11,13 +11,13 @@ const LayoutDefault = (props) => {
 
 
     return (
-        <div class="container">
+        <div className="container">
           <Navbar />
-          <div class="container">
+          <div className="container">
             
             <Products category={category} />
           </div>
-        <div class="container">
+        <div className="container">
           <Footerbar />
         </div>
       </div>
