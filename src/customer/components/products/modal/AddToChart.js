@@ -65,7 +65,7 @@ const AddToChart = ({ product, sugarInfo, tempInfo, toppingInfo, resetCustom }) 
     }
 
     return (
-        <button onClick={addItem} type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Add to Cart</button>
+        <button onClick={addItem} type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal">Add to Cart</button>
     )
 }
 export default AddToChart;

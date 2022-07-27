@@ -10,12 +10,12 @@ const TemperatureLevel = (props) => {
     }
 
     return (
-        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
             {
                 tempOptions.map((option, index) => (
                     <>
-                    <input type="radio" class="btn-check" name="temperatureLevel" id={option} value={option} checked={props.tempLevel === option} onChange={handleChange} />
-                    <label class="btn btn-outline-secondary" htmlFor={option}>{tempNames[index]}</label>
+                    <input type="radio" className="btn-check" name="temperatureLevel" id={option} value={option} checked={props.tempLevel === option} onChange={handleChange} />
+                    <label className="btn btn-outline-secondary" htmlFor={option}>{tempNames[index]}</label>
                     </>
                 ))
             }

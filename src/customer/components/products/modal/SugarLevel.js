@@ -10,11 +10,11 @@ const SugarLevel = (props) => {
     }
 
     return (
-        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
         {info.map((i, index) => (
             <>
-            <input type="radio" class="btn-check" name="sugarLevel" id={i} value={i} checked={props.sugarLevel === i} onChange={onChangeValue}/>
-            <label class="btn btn-outline-secondary" htmlFor={i}>{labels[index]}</label>
+            <input type="radio" className="btn-check" name="sugarLevel" id={i} value={i} checked={props.sugarLevel === i} onChange={onChangeValue}/>
+            <label className="btn btn-outline-secondary" htmlFor={i}>{labels[index]}</label>
             </>
         ))}
         </div>  

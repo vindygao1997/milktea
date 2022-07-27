@@ -13,11 +13,11 @@ const Toppings = (props) => {
     }
 
     return (
-        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group" >
+        <div className="btn-group" role="group" aria-label="Basic checkbox toggle button group" >
             {toppingList.map((i, index) => (
                 <>
-                    <input type="checkbox" class="btn-check" checked={false} name="toppings" value={i} id={i} onChange={() => handleChange(index)}/>
-                    <label class="btn btn-outline-secondary" htmlFor={i}>{toppingNames[index]}</label>
+                    <input type="checkbox" className="btn-check" checked={false} name="toppings" value={i} id={i} onChange={() => handleChange(index)}/>
+                    <label className="btn btn-outline-secondary" htmlFor={i}>{toppingNames[index]}</label>
                 </>
 
             ))}
