@@ -6,14 +6,20 @@ import React from 'react';
 
 const OrderingModal = (props) => {
 
-    const productName = props.productName;
+    const toppingList = ["boba", "pudding", "salted cheese foam"];
 
     const [sugarLevel, setSugarLevel] = React.useState(null);
     const [temperatureLevel, setTemperatureLevel] = React.useState(null);
-    const [toppings, setToppings] = React.useState([]);
+    const [toppings, setToppings] = React.useState(new Array(toppingList.length).fill(false));
+
+    console.log("topping:", toppings)
 
     
-
+    function resetCustom() {
+        setSugarLevel(null);
+        setTemperatureLevel(null);
+        setToppings(new Array(toppingList.length).fill(false));
+    }
     
 
     return (
@@ -25,20 +31,21 @@ const OrderingModal = (props) => {
             </div>
             <div class="modal-body">
                 <h5>Sugar Level</h5>
-                <SugarLevel toChild={sugarLevel} sendToParent={setSugarLevel}/>
+                <SugarLevel sugarLevel={sugarLevel} sendToParent={setSugarLevel}/>
                 <hr class="border-2 opacity-50"/>
                 <h5>Temperature Level</h5>
-                <TemperatureLevel toChild={temperatureLevel} sendToParent={setTemperatureLevel}/>
+                <TemperatureLevel tempLevel={temperatureLevel} sendToParent={setTemperatureLevel}/>
                 <hr class="border-2 opacity-50"/>
                 <h5>Toppings</h5>
-                <Toppings toChild={toppings} sendToParent={setToppings}/>
+                <Toppings toppings={toppings} sendToParent={setToppings}/>
             </div>
             <div class="modal-footer">
-                <AddToChart 
-                        product={productName} 
+                <AddToChart   
+                        product={props.productName} 
                         sugarInfo={sugarLevel} 
                         tempInfo={temperatureLevel} 
-                        toppingInfo={toppings}/>
+                        toppingInfo={toppings}
+                        resetCustom={resetCustom}/>
                 
             </div>
             </div>

@@ -1,9 +1,8 @@
 import React from 'react';
 import { Cart } from '../../../context/Context';
 
-// TODO: localStorage updated after "Add to cart", but cart number in nav-bar is not updated until refreshing (which is re-rendering the whole app)
 
-const AddToChart = ({ product, sugarInfo, tempInfo, toppingInfo }) => {
+const AddToChart = ({ product, sugarInfo, tempInfo, toppingInfo, resetCustom }) => {
 
 
     const item = {
@@ -61,11 +60,12 @@ const AddToChart = ({ product, sugarInfo, tempInfo, toppingInfo }) => {
     const { cart, setCart } = React.useContext(Cart);
 
     const addItem = () => {
-        setCart([...cart, item])
+        setCart([...cart, item]);
+        resetCustom();
     }
 
     return (
-        <button onClick={addItem} type="button" class="btn btn-outline-secondary">Add to Cart</button>
+        <button onClick={addItem} type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Add to Cart</button>
     )
 }
 export default AddToChart;

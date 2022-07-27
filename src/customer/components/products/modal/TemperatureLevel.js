@@ -1,13 +1,12 @@
 import React from 'react';
 
 const TemperatureLevel = (props) => {
-    const [tempLevel, setTempLevel] = React.useState(null);
+    
     const tempOptions = ["ice0", "ice50", "ice100"];
     const tempNames = ["No Ice", "Half Ice", "Full Ice"];
 
     const handleChange = (e) => {
         props.sendToParent(e.target.value);
-        setTempLevel(e.target.value)
     }
 
     return (
@@ -15,7 +14,7 @@ const TemperatureLevel = (props) => {
             {
                 tempOptions.map((option, index) => (
                     <>
-                    <input type="radio" class="btn-check" name="temperatureLevel" id={option} value={option} checked={tempLevel === option} onChange={handleChange} />
+                    <input type="radio" class="btn-check" name="temperatureLevel" id={option} value={option} checked={props.tempLevel === option} onChange={handleChange} />
                     <label class="btn btn-outline-secondary" htmlFor={option}>{tempNames[index]}</label>
                     </>
                 ))
