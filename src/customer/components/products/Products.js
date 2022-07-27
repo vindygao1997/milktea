@@ -23,7 +23,7 @@ const Products = (props) => {
 
   return (
       <div className="container">
-          <div class="row row-cols-1 row-cols-md-2 g-4">
+          <div className="row row-cols-1 row-cols-md-2 g-4">
             {products.map(product => (
               
                <ProductItem 
